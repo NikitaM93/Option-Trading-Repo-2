@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JOptionPane;
 
-public class hedgealpha extends javax.swing.JFrame {
+public class program extends javax.swing.JFrame {
     public static ArrayList<MarketDate> dates=new ArrayList<MarketDate>();
     public static ArrayList<Double> logreturns=new ArrayList<Double>();
     public static ArrayList<Double> averagelogs=new ArrayList<Double>();
@@ -23,7 +23,7 @@ public class hedgealpha extends javax.swing.JFrame {
     public static double annualvolprimeimplied;
     public static double delta, gamma, vega, theta, rho;
 
-    public hedgealpha() {
+    public program() {
         initComponents();
     }
 
@@ -80,6 +80,11 @@ public class hedgealpha extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridBagLayout());
@@ -176,7 +181,7 @@ public class hedgealpha extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
         getContentPane().add(stateCombo, gridBagConstraints);
-
+        
         workPhoneLabel.setText("Option Premium:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -217,7 +222,7 @@ public class hedgealpha extends javax.swing.JFrame {
         homePhoneLabel.setText("Implied Vol.:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 14;
+        gridBagConstraints.gridy = 17;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
         getContentPane().add(homePhoneLabel, gridBagConstraints);
@@ -225,7 +230,7 @@ public class hedgealpha extends javax.swing.JFrame {
         satelitePhoneField.setColumns(10);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 14;
+        gridBagConstraints.gridy = 17;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
@@ -347,7 +352,7 @@ public class hedgealpha extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
         getContentPane().add(jLabel1, gridBagConstraints);
 
-        jLabel2.setText("(mm dd yyy)");
+        jLabel2.setText("(mm dd yyyy)");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 4;
@@ -424,45 +429,70 @@ public class hedgealpha extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         getContentPane().add(jLabel8, gridBagConstraints);
 
-        jTextField3.setText("jTextField3");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        getContentPane().add(jTextField3, gridBagConstraints);
-
-        jTextField4.setText("jTextField4");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 13;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        getContentPane().add(jTextField4, gridBagConstraints);
-
-        jTextField5.setText("jTextField5");
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 13;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        getContentPane().add(jTextField5, gridBagConstraints);
-
-        jTextField6.setText("jTextField6");
-        /*jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
-            }
-        });*/
+        getContentPane().add(jTextField3, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 13;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 14;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
+        getContentPane().add(jTextField4, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 15;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        getContentPane().add(jTextField5, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         getContentPane().add(jTextField6, gridBagConstraints);
 
+        jLabel9.setText("(Δ - Delta)");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
+        getContentPane().add(jLabel9, gridBagConstraints);
+
+        jLabel10.setText("(Γ - Gamma)");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 13;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
+        getContentPane().add(jLabel10, gridBagConstraints);
+
+        jLabel11.setText("(V - Vega)");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.BELOW_BASELINE_LEADING;
+        getContentPane().add(jLabel11, gridBagConstraints);
+
+        jLabel12.setText("(Ɵ - Theta)");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 15;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.BELOW_BASELINE_LEADING;
+        getContentPane().add(jLabel12, gridBagConstraints);
+
+        jLabel13.setText("(Ρ - Rho)");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.BELOW_BASELINE_LEADING;
+        getContentPane().add(jLabel13, gridBagConstraints);
+
         pack();
-    }// </editor-fold>                                   
+    }// </editor-fold>                        
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
         System.exit(0);
@@ -484,7 +514,6 @@ public class hedgealpha extends javax.swing.JFrame {
     satelitePhoneField.setText("");
 
     stateCombo.setSelectedIndex(0);
-
     
     }                                        
 
@@ -569,18 +598,21 @@ public class hedgealpha extends javax.swing.JFrame {
         // TODO add your handling code here:
     }                                           
 
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+    }                                           
+
     /**
     * @param args the command line arguments
     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new hedgealpha().setVisible(true);
+                new program().setVisible(true);
             }
         });
     }
 
-  
     // Variables declaration - do not modify                     
     private javax.swing.JButton cancelButton;
     private javax.swing.JTextField cellPhoneField;
@@ -595,6 +627,10 @@ public class hedgealpha extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -602,6 +638,7 @@ public class hedgealpha extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -625,7 +662,8 @@ public class hedgealpha extends javax.swing.JFrame {
     private javax.swing.JLabel surnameLabel;
     private javax.swing.JTextField workPhoneField;
     private javax.swing.JLabel workPhoneLabel;
-    // End of variables declaration          
+    // End of variables declaration                   
+
 
 
 
